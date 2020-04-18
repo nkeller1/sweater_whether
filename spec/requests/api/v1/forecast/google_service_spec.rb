@@ -2,18 +2,15 @@ require 'rails_helper'
 
 RSpec.describe GoogleService do
   context "instance methods" do
-      it "google data" do
+    it "google data", :vcr do
 
-        search = subject.location("denver,co")
-        expect(search).to be_a Hash
+      search = GoogleService.new.lat_long("denver,co")
+      expect(search).to be_a Hash
 
-        expect(search[:results].count).to eq 7
-        member_data = search[:results].first
+      lat_long = search[:results].first[:geometry][:location]
 
-        expect(member_data).to have_key :name
-        expect(member_data).to have_key :role
-        expect(member_data).to have_key :district
-        expect(member_data).to have_key :party
-      end
+      expect(lat_long).to have_key :lat
+      expect(lat_long).to have_key :lng
     end
   end
+end
