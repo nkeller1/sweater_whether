@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe GoogleService do
   context "instance methods" do
-    it "google data", :vcr do
+    it "get lat and lng", :vcr do
 
       search = GoogleService.new.lat_long("denver,co")
       expect(search).to be_a Hash
