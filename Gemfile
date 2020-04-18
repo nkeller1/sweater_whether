@@ -16,7 +16,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'google-api-client'
 gem 'factory_bot_rails'
-
+gem 'fast_jsonapi'
 
 
 group :development, :test do
