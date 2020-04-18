@@ -6,7 +6,6 @@ class Api::V1::ForecastsController < ApplicationController
     url: 'https://maps.googleapis.com',
     params: {key: ENV['GOOGLE_API_KEY']},
     )
-    require "pry"; binding.pry
 
     response = connection.get('/maps/api/geocode/json') do |req|
       req.params['address'] = location
