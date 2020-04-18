@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "Forecast weather of current city" do
-  it "recieves a request" do
+  it "recieves a request", :vcr do
 
     get '/api/v1/forecast?location=denver,co'
 
