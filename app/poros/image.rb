@@ -7,6 +7,8 @@ class Image
   end
 
   def parse_unsplash_data(unsplash_data)
-    @image = unsplash_data.sample[:urls][:raw]
+    selection = unsplash_data.sample
+    @image = selection[:urls][:raw]
+    @id = selection[:alt_description]
   end
 end
