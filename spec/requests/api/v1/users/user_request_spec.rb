@@ -23,13 +23,16 @@ RSpec.describe "Create User" do
   end
 
   it 'sends back and error code if email is already taken' do
-    user = User.create(email: 'example@example.com' )
+    user = User.create(
+      email: 'example@example.com',
+      api_key: '2',
+      password: 'password')
 
     post api_v1_users_path, params: {
       "email": "example@example.com",
       "password": "password",
       "password_confirmation": "password" }
-
+      
       expect(response.status).to eq(406)
       expect(response.headers["Content-Type"]).to eq("application/json; charset=utf-8")
       expect(response.body).to eq("email already in use")
