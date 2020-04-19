@@ -7,7 +7,7 @@ RSpec.describe "Create User" do
       "email": "whatever@example.com",
       "password": "password",
       "password_confirmation": "password" }
-
-    expect(response).to be_successful
+  
+    expect(User.all.count).to eq(1)
   end
 end
