@@ -17,6 +17,7 @@ gem 'figaro'
 gem 'google-api-client'
 gem 'factory_bot_rails'
 gem 'fast_jsonapi'
+gem 'bcrypt', '~> 3.1.7'
 
 
 group :development, :test do
@@ -28,10 +29,10 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'vcr'
   gem 'webmock'
+  gem 'shoulda-matchers'
 end
 
 group :development do
