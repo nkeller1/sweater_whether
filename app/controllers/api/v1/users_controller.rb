@@ -8,7 +8,10 @@ class Api::V1::UsersController < ApplicationController
     # if password != password_confirmation
     #   "render error and send in serializer"
     # end
-    # User.create(email: email, password_digest: password)
+    user = User.new(email: email, password_digest: password)
+    user.update(api_key: user.generate_api_key)
+
+    
   end
 
 end
