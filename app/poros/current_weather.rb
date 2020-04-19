@@ -16,12 +16,12 @@ class CurrentWeather
                 :uv_index,
                 :id
 
-  def initialize(openweather_data)
+  def initialize(openweather_data, location)
     parse_openweather_data(openweather_data)
+    @id = location
   end
 
   def parse_openweather_data(openweather_data)
-    @id = openweather_data[:timezone]
     @current_temp = openweather_data[:current][:temp]
     @current_time = openweather_data[:current][:dt]
     @main_description = openweather_data[:current][:weather].first[:main]

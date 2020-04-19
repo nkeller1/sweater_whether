@@ -6,7 +6,8 @@ class Api::V1::ForecastsController < ApplicationController
     coords = Coordinates.new(coords)
 
     current_weather = OpenWeatherService.new.get_forecast(coords.lat, coords.lng)
-    object = CurrentWeather.new(current_weather)
-    forecast_json = render json: ForecastSerializer.new(object).serialized_json
+
+    current_weather = CurrentWeather.new(current_weather, location)
+    forecast_json = render json: ForecastSerializer.new(current_weather).serialized_json
   end
 end
