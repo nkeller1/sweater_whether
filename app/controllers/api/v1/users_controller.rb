@@ -9,6 +9,7 @@ class Api::V1::UsersController < ApplicationController
     return render json: email_exists if  User.exists?(email: email)
 
     user = User.create(user_params)
+    
     user.update(api_key: user.generate_api_key)
     render json: UserSerializer.new(user).serialized_json
   end
