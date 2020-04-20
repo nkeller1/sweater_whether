@@ -1797,8 +1797,9 @@ RSpec.describe Antipode do
     location = 'hongkong'
 
     antipode = Antipode.new(google_response, openweather_response, location)
-    require "pry"; binding.pry
-    expect(coordinates.lat).to eq(39.7392358)
-    expect(coordinates.lng).to eq(-104.990251)
+    
+    expect(antipode.location_name).to eq("Mong Kok Station, Mong Kok, Hong Kong")
+    expect(antipode.search_location).to eq("Hongkong")
+    expect(antipode.forecast).to eq({:current_tempature=>283.09, :summary=>"Clouds"})
   end
 end
