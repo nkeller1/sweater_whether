@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Forecast weather of current city" do
+RSpec.describe "antipode of start location" do
   it "recieves a request", :vcr do
 
     get '/api/v1/antipode?location=hongkong'

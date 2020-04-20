@@ -12,4 +12,11 @@ class GoogleService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def reverse_geocode(lat, lng)
+    response = connection.get('/maps/api/geocode/json') do |req|
+      req.params['latlng'] = "#{lat},#{lng}"
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
