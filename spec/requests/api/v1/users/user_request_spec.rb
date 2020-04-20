@@ -11,7 +11,7 @@ RSpec.describe "Create User" do
     expect(response).to be_successful
   end
 
-  xit 'sends back and error code if passwords do no match' do
+  it 'sends back and error code if passwords do no match' do
     post api_v1_users_path, params: {
       "email": "example@example.com",
       "password": "password",
@@ -22,7 +22,7 @@ RSpec.describe "Create User" do
       expect(response.body).to eq("passwords do not match")
   end
 
-  xit 'sends back and error code if email is already taken' do
+  it 'sends back and error code if email is already taken' do
     user = User.create(
       email: 'example@example.com',
       api_key: '2',
