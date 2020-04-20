@@ -13,7 +13,6 @@ class Api::V1::AntipodeController < ApplicationController
     anti_current_weather = OpenWeatherService.new.get_forecast(anti_lat, anti_long)
 
     final_data = Antipode.new(anti_location, anti_current_weather, location)
-    require "pry"; binding.pry
 
     render json: AntipodeSerializer.new(final_data).serialized_json
   end

@@ -8,7 +8,7 @@ class Antipode
   def initialize(google_data, openweather_data, search_location)
     parse_google_data(google_data)
     parse_openweather_data(openweather_data)
-    @search_location = search_location
+    @search_location = search_location.capitalize
     @id = nil
   end
 
