@@ -15,6 +15,6 @@ class Api::V1::AntipodeController < ApplicationController
     final_data = Antipode.new(anti_location, anti_current_weather, location)
     require "pry"; binding.pry
 
-
+    render json: AntipodeSerializer.new(final_data).serialized_json
   end
 end

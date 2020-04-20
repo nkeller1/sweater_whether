@@ -1,14 +1,15 @@
 class Antipode
   attr_reader :search_location,
               :location_name,
-              :current_temp,
-              :summary
+              :forecast,
+              :id
 
 
   def initialize(google_data, openweather_data, search_location)
     parse_google_data(google_data)
     parse_openweather_data(openweather_data)
     @search_location = search_location
+    @id = nil
   end
 
   def parse_google_data(google_data)
@@ -16,7 +17,9 @@ class Antipode
   end
 
   def parse_openweather_data(openweather_data)
-    @current_temp = openweather_data[:current][:temp]
-    @summary = openweather_data[:current][:weather].first[:main]
+    @forecast = {
+    current_tempature: openweather_data[:current][:temp],
+    summary: openweather_data[:current][:weather].first[:main]
+    }
   end
 end
