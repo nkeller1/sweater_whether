@@ -2,118 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=denver,co&key=<GOOGLE_API_KEY>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v1.0.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 20 Apr 2020 21:34:03 GMT
-      Pragma:
-      - no-cache
-      Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
-      Cache-Control:
-      - no-cache, must-revalidate
-      Vary:
-      - Accept-Language
-      Access-Control-Allow-Origin:
-      - "*"
-      X-Goog-Maps-Metro-Area:
-      - Denver, CO
-      Server:
-      - mafe
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      Server-Timing:
-      - gfet4t7; dur=37
-      Alt-Svc:
-      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,h3-T050=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-           "results" : [
-              {
-                 "address_components" : [
-                    {
-                       "long_name" : "Denver",
-                       "short_name" : "Denver",
-                       "types" : [ "locality", "political" ]
-                    },
-                    {
-                       "long_name" : "Denver County",
-                       "short_name" : "Denver County",
-                       "types" : [ "administrative_area_level_2", "political" ]
-                    },
-                    {
-                       "long_name" : "Colorado",
-                       "short_name" : "CO",
-                       "types" : [ "administrative_area_level_1", "political" ]
-                    },
-                    {
-                       "long_name" : "United States",
-                       "short_name" : "US",
-                       "types" : [ "country", "political" ]
-                    }
-                 ],
-                 "formatted_address" : "Denver, CO, USA",
-                 "geometry" : {
-                    "bounds" : {
-                       "northeast" : {
-                          "lat" : 39.91424689999999,
-                          "lng" : -104.6002959
-                       },
-                       "southwest" : {
-                          "lat" : 39.614431,
-                          "lng" : -105.109927
-                       }
-                    },
-                    "location" : {
-                       "lat" : 39.7392358,
-                       "lng" : -104.990251
-                    },
-                    "location_type" : "APPROXIMATE",
-                    "viewport" : {
-                       "northeast" : {
-                          "lat" : 39.91424689999999,
-                          "lng" : -104.6002959
-                       },
-                       "southwest" : {
-                          "lat" : 39.614431,
-                          "lng" : -105.109927
-                       }
-                    }
-                 },
-                 "place_id" : "ChIJzxcfI6qAa4cR1jaKJ_j0jhE",
-                 "types" : [ "locality", "political" ]
-              }
-           ],
-           "status" : "OK"
-        }
-    http_version: null
-  recorded_at: Mon, 20 Apr 2020 21:34:03 GMT
-- request:
-    method: get
     uri: https://api.openweathermap.org/data/2.5/onecall?appid=6aa2f8000716229a782d62a10ca9c500&lat=39.7392358&lon=-104.990251&units=imperial
     body:
       encoding: US-ASCII
@@ -133,7 +21,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Mon, 20 Apr 2020 21:34:03 GMT
+      - Mon, 20 Apr 2020 21:34:33 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -209,5 +97,5 @@ http_interactions:
         clouds","icon":"04d"}],"clouds":100,"uvi":8.1},{"dt":1588010400,"sunrise":1587989081,"sunset":1588038603,"temp":{"day":72.14,"min":55.22,"max":77.18,"night":59.41,"eve":75.79,"morn":55.22},"feels_like":{"day":65.55,"night":49.62,"eve":63.9,"morn":49.44},"pressure":1006,"humidity":14,"dew_point":29.97,"wind_speed":2.86,"wind_deg":139,"weather":[{"id":804,"main":"Clouds","description":"overcast
         clouds","icon":"04d"}],"clouds":89,"uvi":8.06}]}'
     http_version: null
-  recorded_at: Mon, 20 Apr 2020 21:34:03 GMT
+  recorded_at: Mon, 20 Apr 2020 21:34:34 GMT
 recorded_with: VCR 5.1.0
