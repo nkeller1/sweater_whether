@@ -12,5 +12,17 @@ RSpec.describe GoogleService do
       expect(lat_long).to have_key :lat
       expect(lat_long).to have_key :lng
     end
+
+    it "get_directions", :vcr do
+
+      search = GoogleService.new.get_directions('denver,co', 'pueblo,co')
+
+      expect(search).to be_a Hash
+
+      directions = search[:routes].first[:legs].first[:duration]
+      
+      expect(directions).to have_key :text
+      expect(directions).to have_key :value
+    end
   end
 end
