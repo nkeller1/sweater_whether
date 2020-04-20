@@ -11,7 +11,6 @@ RSpec.describe Roadtrip do
 
     roadtrip = Roadtrip.new(origin, destination, travel_time_string, arrival_temp, arrival_description)
 
-
     expect(roadtrip.origin).to eq('denver,co')
     expect(roadtrip.destination).to eq('pueblo,co')
     expect(roadtrip.travel_time).to eq("1 hour 48 mins")
