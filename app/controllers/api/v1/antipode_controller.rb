@@ -6,7 +6,7 @@ class Api::V1::AntipodeController < ApplicationController
 
     antipode_coords = AntipodeService.new.antipode_coords(coords.lat,coords.lng)
     anti = Antilatlng.new(antipode_coords)
-
+    
     anti_location = GoogleService.new.reverse_geocode(anti.anti_lat,anti.anti_long)
 
     anti_current_weather = OpenWeatherService.new.get_forecast(anti.anti_lat, anti.anti_long)
