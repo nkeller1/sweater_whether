@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Antipode do
   it "has attributes" do
+    
     google_response = {
    "plus_code": {
       "compound_code": "8599+PP Hong Kong",
@@ -1797,7 +1798,7 @@ RSpec.describe Antipode do
     location = 'hongkong'
 
     antipode = Antipode.new(google_response, openweather_response, location)
-    
+
     expect(antipode.location_name).to eq("Mong Kok Station, Mong Kok, Hong Kong")
     expect(antipode.search_location).to eq("Hongkong")
     expect(antipode.forecast).to eq({:current_tempature=>283.09, :summary=>"Clouds"})
