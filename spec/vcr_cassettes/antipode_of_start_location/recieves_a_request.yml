@@ -21,7 +21,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Mon, 20 Apr 2020 15:34:52 GMT
+      - Mon, 20 Apr 2020 15:54:46 GMT
       Pragma:
       - no-cache
       Expires:
@@ -41,7 +41,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=36
+      - gfet4t7; dur=40
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
         ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
@@ -96,7 +96,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: null
-  recorded_at: Mon, 20 Apr 2020 15:34:52 GMT
+  recorded_at: Mon, 20 Apr 2020 15:54:46 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/geocode/json?key=<GOOGLE_API_KEY>&latlng=22.3193039,114.1693611
@@ -118,7 +118,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Mon, 20 Apr 2020 15:34:52 GMT
+      - Mon, 20 Apr 2020 15:54:46 GMT
       Pragma:
       - no-cache
       Expires:
@@ -138,7 +138,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=117
+      - gfet4t7; dur=116
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
         ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
@@ -608,7 +608,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: null
-  recorded_at: Mon, 20 Apr 2020 15:34:52 GMT
+  recorded_at: Mon, 20 Apr 2020 15:54:46 GMT
 - request:
     method: get
     uri: https://api.openweathermap.org/data/2.5/onecall?appid=6aa2f8000716229a782d62a10ca9c500&lat=22.3193039&lon=114.1693611&units=imperial
@@ -630,7 +630,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Mon, 20 Apr 2020 15:34:52 GMT
+      - Mon, 20 Apr 2020 15:54:47 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -647,7 +647,7 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":22.32,"lon":114.17,"timezone":"Asia/Hong_Kong","current":{"dt":1587396892,"sunrise":1587333543,"sunset":1587379499,"temp":75.94,"feels_like":76.44,"pressure":1013,"humidity":78,"dew_point":68.59,"uvi":12.29,"clouds":20,"visibility":10000,"wind_speed":11.41,"wind_deg":150,"weather":[{"id":801,"main":"Clouds","description":"few
+      string: '{"lat":22.32,"lon":114.17,"timezone":"Asia/Hong_Kong","current":{"dt":1587398087,"sunrise":1587333543,"sunset":1587379499,"temp":75.94,"feels_like":76.44,"pressure":1013,"humidity":78,"dew_point":68.59,"uvi":12.29,"clouds":20,"visibility":10000,"wind_speed":11.41,"wind_deg":150,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02n"}]},"hourly":[{"dt":1587394800,"temp":75.94,"feels_like":79,"pressure":1013,"humidity":78,"dew_point":68.59,"clouds":20,"wind_speed":6.87,"wind_deg":168,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02n"}]},{"dt":1587398400,"temp":75.2,"feels_like":79.14,"pressure":1013,"humidity":84,"dew_point":70.03,"clouds":10,"wind_speed":6.58,"wind_deg":160,"weather":[{"id":800,"main":"Clear","description":"clear
         sky","icon":"01n"}]},{"dt":1587402000,"temp":74.68,"feels_like":79.05,"pressure":1012,"humidity":88,"dew_point":70.88,"clouds":5,"wind_speed":6.6,"wind_deg":149,"weather":[{"id":800,"main":"Clear","description":"clear
@@ -706,5 +706,62 @@ http_interactions:
         rain","icon":"10d"}],"clouds":56,"rain":0.35,"uvi":12.53},{"dt":1587960000,"sunrise":1587938028,"sunset":1587984469,"temp":{"day":69.66,"min":66.15,"max":70,"night":67.64,"eve":68.4,"morn":66.43},"feels_like":{"day":66.49,"night":66.94,"eve":66.16,"morn":65.25},"pressure":1020,"humidity":64,"dew_point":57.27,"wind_speed":9.51,"wind_deg":24,"weather":[{"id":500,"main":"Rain","description":"light
         rain","icon":"10d"}],"clouds":90,"rain":0.55,"uvi":12.53}]}'
     http_version: null
-  recorded_at: Mon, 20 Apr 2020 15:34:52 GMT
+  recorded_at: Mon, 20 Apr 2020 15:54:47 GMT
+- request:
+    method: get
+    uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - oscar_the_grouch
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 20 Apr 2020 15:54:46 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"44fbfaaa09d0c593056cbd5360c77c9c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ae1549fe-5601-4007-b4c0-72e4fd941710
+      X-Runtime:
+      - '0.002629'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
+    http_version: null
+  recorded_at: Mon, 20 Apr 2020 15:54:47 GMT
 recorded_with: VCR 5.1.0
