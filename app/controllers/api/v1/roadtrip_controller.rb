@@ -3,6 +3,9 @@ class Api::V1::RoadtripController < ApplicationController
     origin = params['origin']
     destination = params['destination']
     api_key = params['api_key']
+
+    return render json: invalid_api_key if  User.exists?(api_key: api_key) == false
+
     directions = GoogleService.new.get_directions(origin, destination)
     travel_time_string = directions[:routes].first[:legs].first[:duration][:text]
     travel_time_seconds = directions[:routes].first[:legs].first[:duration][:value]
@@ -18,4 +21,10 @@ class Api::V1::RoadtripController < ApplicationController
 
     render json: RoadtripSerializer.new(roadtrip).serialized_json
   end
+
+  private
+    def invalid_api_key
+      response.status = 401
+      response.body = 'Unauthorized API Key'
+    end
 end

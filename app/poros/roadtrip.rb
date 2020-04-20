@@ -2,14 +2,14 @@ class Roadtrip
   attr_reader :origin,
               :destination,
               :travel_time,
-              :forecast,
+              :arrival_forecast,
               :id
 
   def initialize(origin, destination, travel_time_string, arrival_temp, arrival_description)
     @origin = origin
     @destination = destination
     @travel_time = travel_time_string
-    @forecast = full_forecast(arrival_temp, arrival_description)
+    @arrival_forecast = full_forecast(arrival_temp, arrival_description)
     @id = nil
   end
 
