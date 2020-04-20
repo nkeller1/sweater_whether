@@ -8,12 +8,13 @@ class Api::V1::AntipodeController < ApplicationController
     anti_lat = antipode_coords[:data][:attributes][:lat]
     anti_long = antipode_coords[:data][:attributes][:long]
 
-    # location = GoogleService.new.reverse_geocode(anti_lat,anti_long)
-    # anti_location = location[:results].first[:formatted_address]
+    anti_location = GoogleService.new.reverse_geocode(anti_lat,anti_long)
 
     anti_current_weather = OpenWeatherService.new.get_forecast(anti_lat, anti_long)
-    anti_current_weather = CurrentWeather.new(anti_current_weather, anti_location)
+
+    final_data = Antipode.new(anti_location, anti_current_weather, location)
     require "pry"; binding.pry
+
 
   end
 end
