@@ -1,5 +1,5 @@
 class CurrentWeather
-  attr_accessor :current_temp,
+  attr_reader :current_temp,
                 :current_time,
                 :main_description,
                 :current_icon,
