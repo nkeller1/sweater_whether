@@ -2,7 +2,7 @@
   <h3 align="center">Sweater Whether or maybe Weather?</h3>
 
   <p align="center">
-    This isan API-only Rails back-end application designed to serve data to a fictional "Sweater Weather" front-end application. It was developed in order to practice 3rd party API consumption, combining API outputs, exposing JSON1.0 data and authentication functionality via an API.
+    This is an API-only Rails back-end application designed to serve data to a fictional "Sweater Weather" front-end application. It was developed in order to practice 3rd party API consumption, combining API outputs, exposing JSON1.0 data and authentication functionality via an API.
     <br />
     <br />
   </p>
@@ -28,16 +28,16 @@ All feature implementation based off of wireframes and example responses located
 
 ### Built With
 
-Framework: Ruby on Rails
-Testing: RSpec
-JSON Serializer: FastJsonAPI
-3rd Party APIs:
-Google Direction  API
-Google Geocoding API
-Unsplash API
-Open Weather API
-Response Caching: VCR & Webmock
-Test Coverage: SimpleCov
+* Framework: Ruby on Rails
+* Testing: RSpec
+* JSON Serializer: FastJsonAPI
+* 3rd Party APIs:
+* Google Direction  API
+* Google Geocoding API
+* Unsplash API
+* Open Weather API
+* Response Caching: VCR & Webmock
+* Test Coverage: SimpleCov
 
 
 <!-- GETTING STARTED -->
