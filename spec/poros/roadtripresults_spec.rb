@@ -8,7 +8,7 @@ RSpec.describe Roadtripresults do
     expect(roadtrip.roadtrip.arrival_forecast).to have_key :description
     expect(roadtrip.roadtrip.destination).to eq('pueblo,co')
     expect(roadtrip.roadtrip.origin).to eq('denver,co')
-    expect(roadtrip.roadtrip.travel_time).to eq("1 hour 48 mins")
+    expect(roadtrip.roadtrip.travel_time).to be_truthy
   end
 
   it 'returns nil if origin is not valid', :vcr do
