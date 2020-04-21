@@ -6,7 +6,7 @@ class Api::V1::RoadtripController < ApplicationController
     destination = params['destination']
     api_key = params['api_key']
 
-    return render json: invalid_api_key if  User.exists?(api_key: api_key) == false
+    return render json: invalid_api_key if User.exists?(api_key: api_key) == false
     roadtrip = Roadtripresults.new(origin, destination, api_key).roadtrip
     return render json: cannot_find_location if roadtrip.nil?
 
