@@ -3,6 +3,8 @@ class Roadtripresults
 
   def initialize(origin, destination, api_key)
     directions = GoogleService.new.get_directions(origin, destination)
+    return @roadtrip = nil if directions[:geocoded_waypoints].first[:geocoder_status] == "ZERO_RESULTS"
+
     traveltime = Traveltime.new(directions)
 
     destination_coords = GoogleService.new.lat_long(destination)
