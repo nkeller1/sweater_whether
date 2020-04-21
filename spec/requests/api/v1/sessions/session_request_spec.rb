@@ -13,6 +13,7 @@ RSpec.describe "Login User" do
        }
 
     expect(response).to be_successful
+    expect(response.headers["Content-Type"]).to eq("application/json; charset=utf-8")
   end
 
   it 'sends back and error code if passwords do no match' do
