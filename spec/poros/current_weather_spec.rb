@@ -1233,7 +1233,7 @@ RSpec.describe Coordinates do
 }
 
     current_weather = CurrentWeather.new(response, 'denver,co')
-
+    
     expect(current_weather.current_temp).to eq(283.09)
     expect(current_weather.id).to eq('denver,co')
     expect(current_weather.current_time).to eq(1587233205)

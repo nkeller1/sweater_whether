@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Destinationforecast do
-  it "has attributes" do
-    response = {
+    before(:each) do
+    @response = {
     "lat": 39.73,
     "lon": -104.96,
     "timezone": "America/Denver",
@@ -1231,10 +1231,25 @@ RSpec.describe Destinationforecast do
         }
     ]
     }
-
-    destination_forecast = Destinationforecast.new(response, 6480)
+  end
+  it "has attributes" do
+    destination_forecast = Destinationforecast.new(@response, 6480)
 
     expect(destination_forecast.arrival_temp).to eq(285.8)
     expect(destination_forecast.arrival_description).to eq("overcast clouds")
+  end
+
+  it 'catches if hourly forecast is too far ahead' do
+    #50 hours in seconds for traveltime
+    destination_forecast = Destinationforecast.new(@response, 180000)
+
+    expect(destination_forecast.arrival_temp).to eq("Forecast Unavaiable")
+    expect(destination_forecast.arrival_description).to eq("Forecast Unavaiable")
+  end
+
+  it '.arrival_hours' do
+    destination_forecast = Destinationforecast.new(@response, 6480)
+
+    expect(destination_forecast.arrival_hours(6480)).to eq(2)
   end
 end
