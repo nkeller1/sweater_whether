@@ -8,5 +8,4 @@ class Forecastresults
     current_weather = OpenWeatherService.new.get_forecast(coords.lat, coords.lng)
     @current_weather = CurrentWeather.new(current_weather, location)
   end
-
 end

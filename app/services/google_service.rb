@@ -1,4 +1,5 @@
 class GoogleService
+  include JsonParser
   def connection
     Faraday.new(
     url: 'https://maps.googleapis.com',
@@ -10,7 +11,7 @@ class GoogleService
     response = connection.get('/maps/api/geocode/json') do |req|
       req.params['address'] = location
     end
-    JSON.parse(response.body, symbolize_names: true)
+    parse_json(response)
   end
 
   def get_directions(origin, destination)
@@ -18,6 +19,6 @@ class GoogleService
       req.params['origin'] = origin
       req.params['destination'] = destination
     end
-    JSON.parse(response.body, symbolize_names: true)
+    parse_json(response)
   end
 end
