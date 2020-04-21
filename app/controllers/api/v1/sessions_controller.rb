@@ -7,7 +7,6 @@ class Api::V1::SessionsController < ApplicationController
     render json: UserSerializer.new(user).serialized_json
   end
 
-
 private
 
   def bad_credentials
