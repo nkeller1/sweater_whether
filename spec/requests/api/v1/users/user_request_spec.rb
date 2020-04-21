@@ -9,6 +9,7 @@ RSpec.describe "Create User" do
       "password_confirmation": "password" }
 
     expect(response).to be_successful
+    expect(response.headers["Content-Type"]).to eq("application/json; charset=utf-8")
   end
 
   it 'sends back and error code if passwords do no match' do
