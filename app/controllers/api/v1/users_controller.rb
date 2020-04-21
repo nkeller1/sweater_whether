@@ -8,21 +8,21 @@ class Api::V1::UsersController < ApplicationController
     return render json: passwords_do_not_match if password != password_confirmation
     return render json: email_exists if  User.exists?(email: email)
 
-    user = User.create(email: email, password_digest:  password)
+    user = User.create(email: email, password:  password, password_confirmation: password)
     user.update(api_key: user.generate_api_key)
 
     render json: UserSerializer.new(user).serialized_json
   end
 
-private
+  private
 
-  def passwords_do_not_match
-    response.status = 406
-    response.body = 'passwords do not match'
-  end
+    def passwords_do_not_match
+      response.status = 406
+      response.body = 'passwords do not match'
+    end
 
-  def email_exists
-    response.status = 406
-    response.body = 'email already in use'
-  end
+    def email_exists
+      response.status = 406
+      response.body = 'email already in use'
+    end
 end

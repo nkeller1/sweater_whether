@@ -1,4 +1,6 @@
 class Api::V1::SessionsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def create
     user = User.find_by(email: params[:email])
     return render json: bad_credentials if user.nil?
@@ -7,10 +9,10 @@ class Api::V1::SessionsController < ApplicationController
     render json: UserSerializer.new(user).serialized_json
   end
 
-private
+  private
 
-  def bad_credentials
-    response.status = 401
-    response.body = 'password or email does not match'
-  end
+    def bad_credentials
+      response.status = 401
+      response.body = 'password or email does not match'
+    end
 end
