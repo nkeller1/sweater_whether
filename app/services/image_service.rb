@@ -1,4 +1,5 @@
 class ImageService
+  include JsonParser
   def connection
     Faraday.new(
     url: 'https://api.unsplash.com',
@@ -11,6 +12,6 @@ class ImageService
       req.params['query'] = keyword
       req.params['count'] = 10
     end
-    JSON.parse(response.body, symbolize_names: true)
+    parse_json(response)
   end
 end

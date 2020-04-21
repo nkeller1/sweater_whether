@@ -1,4 +1,5 @@
 class OpenWeatherService
+  include JsonParser
   def connection
     Faraday.new(
     url: 'https://api.openweathermap.org',
@@ -12,6 +13,6 @@ class OpenWeatherService
       req.params['lon'] = lng
       req.params['units'] = 'imperial'
     end
-    JSON.parse(response.body, symbolize_names: true)
+    parse_json(response)
   end
 end
