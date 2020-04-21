@@ -9,10 +9,10 @@ class Api::V1::SessionsController < ApplicationController
     render json: UserSerializer.new(user).serialized_json
   end
 
-private
+  private
 
-  def bad_credentials
-    response.status = 401
-    response.body = 'password or email does not match'
-  end
+    def bad_credentials
+      response.status = 401
+      response.body = 'password or email does not match'
+    end
 end

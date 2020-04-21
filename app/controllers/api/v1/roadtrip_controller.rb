@@ -13,6 +13,7 @@ class Api::V1::RoadtripController < ApplicationController
   end
 
   private
+  
     def invalid_api_key
       response.status = 401
       response.body = 'Unauthorized API Key'

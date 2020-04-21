@@ -19,5 +19,4 @@ class Roadtrip
       description: arrival_description
     }
   end
-
 end
