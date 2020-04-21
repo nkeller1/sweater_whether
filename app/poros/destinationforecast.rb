@@ -20,5 +20,4 @@ class Destinationforecast
   def arrival_hours(travelseconds)
     (travelseconds / 3600.00).round(1).ceil
   end
-
 end

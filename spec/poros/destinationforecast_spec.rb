@@ -1251,5 +1251,6 @@ RSpec.describe Destinationforecast do
     destination_forecast = Destinationforecast.new(@response, 6480)
 
     expect(destination_forecast.arrival_hours(6480)).to eq(2)
+    expect(destination_forecast.arrival_hours(7800)).to eq(3)
   end
 end
