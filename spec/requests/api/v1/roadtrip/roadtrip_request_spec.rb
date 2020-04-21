@@ -60,7 +60,7 @@ RSpec.describe "Forecast weather of destination city" do
       api_key: 'v3XKw23k917eExJRs6CRbsSnbX4'
       )
 
-    post '/api/v1/road_trip?origin=rufio&destination=pueblo,co&api_key=v3XKw23k917eExJRs6CRbsSnbX4'
+    post '/api/v1/road_trip?origin=pueblo,co&destination=rufio&api_key=v3XKw23k917eExJRs6CRbsSnbX4'
 
     expect(response.body).to eq('Sorry, origin or destination is invalid')
     expect(response.headers["Content-Type"]).to eq("application/json; charset=utf-8")

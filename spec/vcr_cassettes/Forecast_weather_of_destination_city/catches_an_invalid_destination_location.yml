@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/directions/json?destination=pueblo,co&key=<GOOGLE_API_KEY>&origin=rufio
+    uri: https://maps.googleapis.com/maps/api/directions/json?destination=rufio&key=<GOOGLE_API_KEY>&origin=pueblo,co
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 21 Apr 2020 15:32:39 GMT
+      - Tue, 21 Apr 2020 16:00:07 GMT
       Pragma:
       - no-cache
       Expires:
@@ -37,7 +37,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=423
+      - gfet4t7; dur=378
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
         ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
@@ -50,17 +50,17 @@ http_interactions:
         {
            "geocoded_waypoints" : [
               {
-                 "geocoder_status" : "ZERO_RESULTS"
-              },
-              {
                  "geocoder_status" : "OK",
                  "place_id" : "ChIJZbEbB_OiE4cRLrjHaKNrLag",
                  "types" : [ "locality", "political" ]
+              },
+              {
+                 "geocoder_status" : "ZERO_RESULTS"
               }
            ],
            "routes" : [],
            "status" : "NOT_FOUND"
         }
     http_version: null
-  recorded_at: Tue, 21 Apr 2020 15:32:39 GMT
+  recorded_at: Tue, 21 Apr 2020 16:00:07 GMT
 recorded_with: VCR 5.1.0
