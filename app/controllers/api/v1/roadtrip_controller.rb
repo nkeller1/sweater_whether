@@ -1,4 +1,6 @@
 class Api::V1::RoadtripController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def create
     origin = params['origin']
     destination = params['destination']
