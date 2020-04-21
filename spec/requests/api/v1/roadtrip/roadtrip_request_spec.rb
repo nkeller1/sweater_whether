@@ -9,7 +9,7 @@ RSpec.describe "Forecast weather of destination city" do
       )
 
     post '/api/v1/road_trip?origin=denver,co&destination=pueblo,co&api_key=v3XKw23k917eExJRs6CRbsSnbX4'
-    
+
     expect(response).to be_successful
     expect(response.headers["Content-Type"]).to eq("application/json; charset=utf-8")
   end
@@ -23,6 +23,7 @@ RSpec.describe "Forecast weather of destination city" do
 
     post '/api/v1/road_trip?origin=denver,co&destination=pueblo,co&api_key=v3XKw23k917eExJRs6CRbsSnbX4'
 
+    expect(response.headers["Content-Type"]).to eq("application/json; charset=utf-8")
     expect(response.body).to eq("Unauthorized API Key")
   end
 
@@ -35,6 +36,7 @@ RSpec.describe "Forecast weather of destination city" do
 
     post '/api/v1/road_trip?origin=denver,co&destination=pueblo,co&api_key=v3XKw23k917eExJRs6CRbsSnbX4'
 
+    expect(response.headers["Content-Type"]).to eq("application/json; charset=utf-8")
     expect(response.body).to eq("Unauthorized API Key")
   end
 end
