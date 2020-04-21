@@ -16,10 +16,6 @@ class Api::V1::UsersController < ApplicationController
 
 private
 
-  def user_params
-    params.permit(:email, :password_digest)
-  end
-
   def passwords_do_not_match
     response.status = 406
     response.body = 'passwords do not match'
